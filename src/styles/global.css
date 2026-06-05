@@ -1,0 +1,110 @@
+/* ColorWalk 全局样式 — 移动端优先 */
+
+:root {
+  --bg: #faf8f5;
+  --bg-card: #ffffff;
+  --text: #4a4543;
+  --text-muted: #9a9593;
+  --text-light: #b5b0ae;
+  --border: #e8e4e0;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --safe-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* 页面过渡 */
+.page {
+  flex: 1;
+  padding: 20px 20px calc(80px + var(--safe-bottom));
+  overflow-y: auto;
+}
+
+/* 通用标题 */
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* 主按钮 */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--text);
+  border-radius: var(--radius);
+  letter-spacing: 1px;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  transform: none;
+}

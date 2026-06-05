@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd c:\\\\Users\\\\yixuan\\\\Desktop\\\\colorwalk; Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"$pwd\\\\public\\\\logo.png\"\\); Write-Output \"Size: $\\($img.Width\\)x$\\($img.Height\\)\"; $resize = { param\\($size\\) $bmp = New-Object System.Drawing.Bitmap\\($size, $size\\); $g = [System.Drawing.Graphics]::FromImage\\($bmp\\); $g.SmoothingMode = 'HighQuality'; $g.InterpolationMode = 'HighQualityBicubic'; $g.DrawImage\\($img, 0, 0, $size, $size\\); $g.Dispose\\(\\); $bmp.Save\\(\"$pwd\\\\public\\\\icon-$size.png\", [System.Drawing.Imaging.ImageFormat]::Png\\); $bmp.Dispose\\(\\); Write-Output \"icon-$size.png created\" }; & $resize 192; & $resize 512; $img.Dispose\\(\\))",
+      "PowerShell(Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.IPAddress -notmatch \"^127\\\\.\" } | Select-Object IPAddress, InterfaceAlias, PrefixOrigin)"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+.palette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  justify-items: center;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.swatch {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.swatch:active {
+  transform: scale(0.92);
+}
+
+.swatchSelected {
+  border-color: var(--swatch-color);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--swatch-color);
+  transform: scale(1.08);
+}
+
+.swatchCheck {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swatchCheck svg {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* 选中颜色卡片 */
+.selectedCard {
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  transition: background-color 0.4s;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectedCardPlaceholder {
+  background: var(--border);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.selectedCardName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.selectedCardQuote {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+}
